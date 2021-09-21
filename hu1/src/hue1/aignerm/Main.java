@@ -19,7 +19,7 @@ public class Main {
         
         sieve.printPrimes();
         
-        System.out.println("----------------------------------------------------");
+        System.out.println("---------------------------------------------");
         sieve.printEvenNumbers();
     }
     
