@@ -67,14 +67,12 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         generatePrime();
         
         if(validRange()){
-            
             for (int i = 0; i < alleZahlen.length; i++) {
                 if(alleZahlen[i]){
                     System.out.println(i);
                 }
             }
         }
-        
     }
     
     public void printEvenNumbers(){
