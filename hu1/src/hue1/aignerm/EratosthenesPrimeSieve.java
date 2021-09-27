@@ -10,16 +10,16 @@ package hue1.aignerm;
  * @author Michael
  */
 public class EratosthenesPrimeSieve implements PrimeSieve{
-    private final int OBERGRENZE;
+    private final int UPPERBOUND;
     private boolean[] alleZahlen;
     private int[] evenNumbers;
     
     public EratosthenesPrimeSieve(int obergrenze) {
-        this.OBERGRENZE = obergrenze;        
+        this.UPPERBOUND = obergrenze;        
     }
     
     private boolean validRange(){
-        if(OBERGRENZE > 2){
+        if(UPPERBOUND > 2){
             return true;
         }else{
             System.out.println("Die Obergrenze muss größer als 2 sein");
@@ -29,7 +29,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     
     public void generatePrime(){
             if(validRange()){
-                alleZahlen = new boolean[OBERGRENZE];
+                alleZahlen = new boolean[UPPERBOUND];
             
                 for (int i = 0; i < alleZahlen.length; i++) {
                     alleZahlen[i] = true;
@@ -99,7 +99,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     }
     
     private void generateEvenNumbers(){
-        evenNumbers = new int[OBERGRENZE];
+        evenNumbers = new int[UPPERBOUND];
         for (int i = 0; i < alleZahlen.length; i+=2) {
                 evenNumbers[i] = i;
         }
