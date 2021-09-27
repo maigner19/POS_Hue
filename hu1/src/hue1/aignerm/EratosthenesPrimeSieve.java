@@ -98,7 +98,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     
     private void generateEvenNumbers(){
         evenNumbers = new int[UPPERBOUND];
-        for (int i = 0; i < allNumbers.length; i+=2) {
+        for (int i = 2; i < allNumbers.length; i+=2) {
                 evenNumbers[i] = i;
         }
     }
