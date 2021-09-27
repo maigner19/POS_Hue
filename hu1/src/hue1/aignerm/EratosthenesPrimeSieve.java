@@ -14,8 +14,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     private boolean[] allNumbers;
     private int[] evenNumbers;
     
-    public EratosthenesPrimeSieve(int obergrenze) {
-        this.UPPERBOUND = obergrenze;        
+    public EratosthenesPrimeSieve(int upperbound) {
+        this.UPPERBOUND = upperbound;        
     }
     
     private boolean validRange(){
@@ -38,9 +38,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
                 
                 for (int i = 0; i < allNumbers.length; i++) {
                     allNumbers[i]=isPrime(i);
-                }
-                
-                
+                }                
             }        
     }
     
