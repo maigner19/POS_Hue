@@ -11,7 +11,7 @@ package hue1.aignerm;
  */
 public class EratosthenesPrimeSieve implements PrimeSieve{
     private final int UPPERBOUND;
-    private boolean[] alleZahlen;
+    private boolean[] allNumbers;
     private int[] evenNumbers;
     
     public EratosthenesPrimeSieve(int obergrenze) {
@@ -29,15 +29,15 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     
     public void generatePrime(){
             if(validRange()){
-                alleZahlen = new boolean[UPPERBOUND];
+                allNumbers = new boolean[UPPERBOUND];
             
-                for (int i = 0; i < alleZahlen.length; i++) {
-                    alleZahlen[i] = true;
+                for (int i = 0; i < allNumbers.length; i++) {
+                    allNumbers[i] = true;
                 }
                 
                 
-                for (int i = 0; i < alleZahlen.length; i++) {
-                    alleZahlen[i]=isPrime(i);
+                for (int i = 0; i < allNumbers.length; i++) {
+                    allNumbers[i]=isPrime(i);
                 }
                 
                 
@@ -49,7 +49,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     @Override
     public boolean isPrime(int p) {
         boolean prime = true;
-        if(alleZahlen[p] == true){
+        if(allNumbers[p] == true){
          
             for (int i = 2; i < p; i++) {
                 if((p%i)== 0){
@@ -67,8 +67,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         generatePrime();
         
         if(validRange()){
-            for (int i = 0; i < alleZahlen.length; i++) {
-                if(alleZahlen[i]){
+            for (int i = 0; i < allNumbers.length; i++) {
+                if(allNumbers[i]){
                     System.out.println(i);
                 }
             }
@@ -100,7 +100,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     
     private void generateEvenNumbers(){
         evenNumbers = new int[UPPERBOUND];
-        for (int i = 0; i < alleZahlen.length; i+=2) {
+        for (int i = 0; i < allNumbers.length; i+=2) {
                 evenNumbers[i] = i;
         }
     }
